@@ -1,14 +1,10 @@
-### My first repository is awesome!
+### nextPlayerUp
 
-I'm [PSEUDO/NAME] and here it's my first GitHub repository.
-If you see this file on my project, it's because I'm learning Git.
+This application is created with the Next.js framework. I will be using Flexbox to style.
 
-My mood:
+There is an API call to retrieve the data used.
 
-> [MOOD NAME]
+Tech Stack:
 
-My favorite color:
-
-> [COLOR NAME]
-
-Thank you so much for reading! ☺
+> Next.js
+> Flexbox
