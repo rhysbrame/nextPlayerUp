@@ -7,4 +7,5 @@ There is an API call to retrieve the data used.
 Tech Stack:
 
 > Next.js
+
 > Flexbox
