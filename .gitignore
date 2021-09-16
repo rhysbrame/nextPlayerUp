@@ -1,5 +1,5 @@
 # dependencies
-/node_modules
+node_modules
 
 # development
 .vscode
@@ -11,5 +11,4 @@
 .DS_Store
 
 # next.js
-/.next/
-/out/
+.next
