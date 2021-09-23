@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { AppContext } from '../contexts/AppContext';
 import { useEffect, useContext } from 'react';
 import { getAllTeamsData } from '../library/teams';
@@ -8,7 +9,7 @@ function Home({ teamsData }) {
 
   useEffect(() => {
     setTeams(teamsData);
-  }, []);
+  });
 
   return (
     <>
@@ -17,8 +18,8 @@ function Home({ teamsData }) {
           teams.map((team) => (
             <div key={team.TeamID}>
               <li>Full Name: {team.FullName}</li>
-              <Link href={`/teams/${team.Key}`}>
-                <img src={team.WikipediaLogoUrl}></img>
+              <Link href={`/teams/${team.Key}`} passHref>
+                <Image src={team.WikipediaLogoUrl} alt="Team Logo"></Image>
               </Link>
             </div>
           ))}

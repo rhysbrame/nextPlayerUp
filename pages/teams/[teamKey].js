@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { AppContext } from '../../contexts/AppContext';
 import { getTeamNews, getTeamPaths, getTeamRoster } from '../../library/teams';
-import Link from 'next/link';
+import Image from 'next/image';
 
 function Team({ teamRoster, teamNews, params }) {
   const { teams } = useContext(AppContext);
@@ -12,15 +12,12 @@ function Team({ teamRoster, teamNews, params }) {
   return (
     <div>
       <h1>Team {team.FullName}</h1>
-      <img src={team.WikipediaLogoUrl}></img>
+      <Image src={team.WikipediaLogoUrl} alt="Team Logo"></Image>
       <p>{teamNews[0].Title}</p>
       <ul>
         {teamRoster.map((player) => (
           <div key={player.PlayerID}>
             <li>Full Name: {player.Name}</li>
-            <Link href={`/teams/${player.TeamID}`}>
-              <img src={player.WikipediaLogoUrl}></img>
-            </Link>
           </div>
         ))}
       </ul>
