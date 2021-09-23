@@ -1,26 +1,38 @@
-const URL =
-  'https://api.sportsdata.io/v3/nfl/scores/json/AllTeams?key=a79947c2b7ac4db7849431550720651c';
+import Link from 'next/link';
+import { AppContext } from '../contexts/AppContext';
+import { useEffect, useContext } from 'react';
+import { getAllTeamsData } from '../library/teams';
 
-function Home({ teams }) {
+function Home({ teamsData }) {
+  const { teams, setTeams } = useContext(AppContext);
+
+  useEffect(() => {
+    setTeams(teamsData);
+  }, []);
+
   return (
-    <ul>
-      {teams.map((team) => (
-        <div>
-          <li key={team.TeamID}>{team.FullName}</li>
-          <img src={team.WikipediaLogoUrl}></img>
-        </div>
-      ))}
-    </ul>
+    <>
+      <ul>
+        {teams &&
+          teams.map((team) => (
+            <div key={team.TeamID}>
+              <li>Full Name: {team.FullName}</li>
+              <Link href={`/teams/${team.Key}`}>
+                <img src={team.WikipediaLogoUrl}></img>
+              </Link>
+            </div>
+          ))}
+      </ul>
+    </>
   );
 }
 
 export async function getStaticProps() {
-  const res = await fetch(URL);
-  const teams = await res.json();
+  const teamsData = await getAllTeamsData();
 
   return {
     props: {
-      teams,
+      teamsData,
     },
   };
 }
