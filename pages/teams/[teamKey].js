@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import { useContext } from 'react';
 import { AppContext } from '../../contexts/AppContext';
 import { getTeamNews, getTeamPaths, getTeamRoster } from '../../library/teams';
-import Image from 'next/image';
 
 function Team({ teamRoster, teamNews, params }) {
   const { teams } = useContext(AppContext);

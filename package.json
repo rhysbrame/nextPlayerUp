@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This application is created with the Next.js framework. I will be using Flexbox to style.",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
