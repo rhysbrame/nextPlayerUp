@@ -11,6 +11,7 @@ function Home({ teamsData }) {
     setTeams(teamsData);
   });
 
+  if (!teams || !teamsData) return <p></p>;
   return (
     <>
       <ul>
@@ -19,7 +20,12 @@ function Home({ teamsData }) {
             <div key={team.TeamID}>
               <li>Full Name: {team.FullName}</li>
               <Link href={`/teams/${team.Key}`} passHref>
-                <Image src={team.WikipediaLogoUrl} alt="Team Logo"></Image>
+                <Image
+                  src={team.WikipediaLogoUrl}
+                  alt="Team Logo"
+                  height={108}
+                  width={108}
+                ></Image>
               </Link>
             </div>
           ))}

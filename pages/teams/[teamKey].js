@@ -12,7 +12,12 @@ function Team({ teamRoster, teamNews, params }) {
   return (
     <div>
       <h1>Team {team.FullName}</h1>
-      <Image src={team.WikipediaLogoUrl} alt="Team Logo"></Image>
+      <Image
+        src={team.WikipediaLogoUrl}
+        alt="Team Logo"
+        height={108}
+        width={108}
+      ></Image>
       <p>{teamNews[0].Title}</p>
       <ul>
         {teamRoster.map((player) => (
