@@ -24,7 +24,7 @@ export async function getTeamPaths() {
   const paths = teams.map((team) => {
     return {
       params: {
-        key: `${team.Key}`,
+        teamKey: `${team.Key}`,
       },
     };
   });
