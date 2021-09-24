@@ -20,12 +20,14 @@ function Home({ teamsData }) {
             <div key={team.TeamID}>
               <li>Full Name: {team.FullName}</li>
               <Link href={`/teams/${team.Key}`} passHref>
-                <Image
-                  src={team.WikipediaLogoUrl}
-                  alt="Team Logo"
-                  height={108}
-                  width={108}
-                ></Image>
+                <a>
+                  <Image
+                    src={team.WikipediaLogoUrl}
+                    alt="Team Logo"
+                    height={108}
+                    width={108}
+                  ></Image>
+                </a>
               </Link>
             </div>
           ))}
