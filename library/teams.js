@@ -1,22 +1,26 @@
+import allTeamsData from '../dummy_data/allTeamsData';
+import allTeamRosterData from '../dummy_data/allTeamRosterData';
+
 export async function getAllTeamsData() {
-  const res = await fetch(
-    `${process.env.API_PATH}Teams?key=${process.env.API_KEY}`
-  );
-  return res.json();
+  if (process.env.NODE_ENV !== 'production') {
+    return allTeamsData;
+  } else {
+    const res = await fetch(
+      `${process.env.API_PATH}Teams?key=${process.env.API_KEY}`
+    );
+    return res.json();
+  }
 }
 
 export async function getTeamRoster(teamKey) {
-  const res = await fetch(
-    `${process.env.API_PATH}Players/${teamKey}?key=${process.env.API_KEY}`
-  );
-  return res.json();
-}
-
-export async function getTeamNews(teamKey) {
-  const res = await fetch(
-    `${process.env.API_PATH}NewsByTeam/${teamKey}?key=${process.env.API_KEY}`
-  );
-  return res.json();
+  if (process.env.NODE_ENV !== 'production') {
+    return allTeamRosterData;
+  } else {
+    const res = await fetch(
+      `${process.env.API_PATH}Players/${teamKey}?key=${process.env.API_KEY}`
+    );
+    return res.json();
+  }
 }
 
 export async function getTeamPaths() {
