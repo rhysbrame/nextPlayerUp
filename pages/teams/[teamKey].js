@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import { useContext } from 'react';
+import Image from 'next/image';
+import PropTypes from 'prop-types';
 import { AppContext } from '../../contexts/AppContext';
 import { getTeamPaths, getTeamRoster } from '../../library/teams';
 
@@ -12,12 +13,7 @@ function Team({ teamRoster, params }) {
   return (
     <div>
       <h1>Team {team.FullName}</h1>
-      <Image
-        src={team.WikipediaLogoUrl}
-        alt="Team Logo"
-        height={108}
-        width={108}
-      ></Image>
+      <Image src={team.WikipediaLogoUrl} alt="Team Logo" height={108} width={108}></Image>
       <ul>
         {teamRoster.map((player) => (
           <div key={player.PlayerID}>
@@ -48,5 +44,10 @@ export async function getStaticProps({ params }) {
     },
   };
 }
+
+Team.propTypes = {
+  params: PropTypes.node.isRequired,
+  teamRoster: PropTypes.node.isRequired,
+};
 
 export default Team;

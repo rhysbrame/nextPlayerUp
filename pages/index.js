@@ -1,7 +1,8 @@
+import { useEffect, useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 import { AppContext } from '../contexts/AppContext';
-import { useEffect, useContext } from 'react';
 import { getAllTeamsData } from '../library/teams';
 
 function Home({ teamsData }) {
@@ -35,6 +36,10 @@ function Home({ teamsData }) {
     </>
   );
 }
+
+Home.propTypes = {
+  teamsData: PropTypes.node.isRequired,
+};
 
 export async function getStaticProps() {
   const teamsData = await getAllTeamsData();
