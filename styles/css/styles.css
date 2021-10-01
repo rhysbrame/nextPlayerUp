@@ -1,0 +1,61 @@
+:root {
+  --color-white: rgb(245, 245, 245);
+  --color-black: rgb(0, 0, 0);
+  --color-primary-light: rgb(160, 179, 199);
+  --color-primary-medium: rgb(65, 102, 143);
+  --color-primary-dark: rgb(1, 51, 105);
+  --color-grey: rgb(128, 128, 128);
+  --color-grey-light: rgb(229, 235, 241);
+  --color-grey-dark: rgb(82, 82, 82);
+  --color-grey-darker: rgb(39, 39, 39);
+  --color-secondary-light: rgba(116, 124, 106, 0.8);
+  --color-secondary-dark: rgba(32, 45, 16, 0.702);
+  --color-yellow-light: rgb(247, 220, 111);
+  --color-yellow-dark: rgb(212, 172, 13);
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3); }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  color: var(--color-white);
+  background-image: linear-gradient(to right bottom, var(--color-grey), var(--color-grey-light));
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh; }
+
+@font-face {
+  font-family: 'Inter';
+  src: url("/fonts/Inter/Inter-VariableFont_slnt,wght.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap; }
+
+@font-face {
+  font-family: 'Open-sans';
+  src: url("/fonts/OpenSans/OpenSans-VariableFont_wdth,wght.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap; }
+
+body {
+  font-family: 'Open-sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6; }
+
+.container {
+  max-width: 120rem;
+  margin: 8rem auto;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-dark);
+  min-height: 50rem; }

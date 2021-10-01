@@ -5,9 +5,10 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "watch:sass": "node-sass styles/sass/main.scss styles/css/styles.css -w",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npm-run-all --parallel dev watch:sass",
     "export": "next export",
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress": "cypress open",
@@ -39,6 +40,8 @@
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.0",
+    "node-sass": "^5.0.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.4.1"
   }
 }

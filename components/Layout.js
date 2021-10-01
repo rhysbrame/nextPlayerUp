@@ -8,19 +8,23 @@ const Layout = ({ children }) => {
     <>
       <Head>
         <meta charset="UTF-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-
         <link
-          href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
-          rel="stylesheet"
+          rel="preload"
+          href="/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf"
+          as="font"
+          crossOrigin=""
         />
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-
+        <link
+          rel="preload"
+          href="/fonts/OpenSans/OpenSans-VariableFont_wdth\,wght.ttf"
+          as="font"
+          crossOrigin=""
+        />
+        <link rel="icon" type="image/svg" href="/img/nfl.svg" />
         <title>Next Player Up</title>
       </Head>
-      <div className="content">
+      <div>
         <Navbar />
         {children}
         <Footer />
