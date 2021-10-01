@@ -1,9 +1,8 @@
 import { useEffect, useContext } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { AppContext } from '../contexts/AppContext';
 import { getAllTeamsData } from '../library/teams';
+import Teams from '../components/Teams';
 
 function Home({ teamsData }) {
   const { teams, setTeams } = useContext(AppContext);
@@ -14,26 +13,9 @@ function Home({ teamsData }) {
 
   if (!teams || !teamsData) return <p></p>;
   return (
-    <>
-      <ul>
-        {teams &&
-          teams.map((team) => (
-            <div key={team.TeamID}>
-              <li>Full Name: {team.FullName}</li>
-              <Link href={`/teams/${team.Key}`} passHref>
-                <a>
-                  <Image
-                    src={team.WikipediaLogoUrl}
-                    alt="Team Logo"
-                    height={108}
-                    width={108}
-                  ></Image>
-                </a>
-              </Link>
-            </div>
-          ))}
-      </ul>
-    </>
+    <div>
+      <Teams teams={teams} />
+    </div>
   );
 }
 
