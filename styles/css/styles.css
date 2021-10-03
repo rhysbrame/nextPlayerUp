@@ -29,7 +29,7 @@ html {
 
 body {
   color: var(--color-white);
-  background-image: linear-gradient(to right bottom, var(--color-grey), var(--color-grey-light));
+  background-image: linear-gradient(to right bottom, var(--color-primary-dark), var(--color-primary-light));
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh; }
@@ -56,6 +56,23 @@ body {
 .container {
   max-width: 120rem;
   margin: 8rem auto;
-  background-color: var(--color-white);
+  background-color: var(--color-grey-light);
   box-shadow: var(--shadow-dark);
   min-height: 50rem; }
+
+.content {
+  display: flex; }
+
+.teams-container {
+  flex: 1;
+  color: var(--color-white); }
+
+.navbar {
+  background-color: var(--color-grey);
+  flex: 0 0 18%; }
+
+.header {
+  background-image: linear-gradient(to right bottom, var(--color-secondary-light), var(--color-secondary-dark)); }
+
+.team-box-title {
+  color: var(--color-white); }

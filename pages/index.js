@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { AppContext } from '../contexts/AppContext';
 import { getAllTeamsData } from '../library/teams';
 import Teams from '../components/Teams';
+import Navbar from '../components/Navbar';
 
 function Home({ teamsData }) {
   const { teams, setTeams } = useContext(AppContext);
@@ -13,7 +14,8 @@ function Home({ teamsData }) {
 
   if (!teams || !teamsData) return <p></p>;
   return (
-    <div>
+    <div className="content">
+      <Navbar />
       <Teams teams={teams} />
     </div>
   );

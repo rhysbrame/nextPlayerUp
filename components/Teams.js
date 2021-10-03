@@ -8,18 +8,25 @@ function Teams({ teams }) {
       <ul>
         {teams &&
           teams.map((team) => (
-            <div key={team.TeamID} className="team-box">
-              <li className="team-box-title">Full Name: {team.FullName}</li>
-              <Link href={`/teams/${team.Key}`} passHref>
-                <a className="team-box-link">
-                  <Image
-                    src={team.WikipediaLogoUrl}
-                    alt="Team Logo"
-                    height={108}
-                    width={108}
-                  ></Image>
-                </a>
-              </Link>
+            <div
+              key={team.TeamID}
+              className="team-box-view"
+              style={{ 'background-color': `#${team.PrimaryColor}` }}
+            >
+              <li className="team-box-title">
+                <h1>{team.City}</h1>
+                <h2>{team.Name}</h2>
+                <Link href={`/teams/${team.Key}`} passHref>
+                  <a className="team-box-link">
+                    <Image
+                      src={team.WikipediaLogoUrl}
+                      alt="Team Logo"
+                      height={108}
+                      width={108}
+                    ></Image>
+                  </a>
+                </Link>
+              </li>
             </div>
           ))}
       </ul>

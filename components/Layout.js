@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Footer from './Footer';
-import Navbar from './Navbar';
+import Header from './Header';
 import Head from 'next/head';
 
 const Layout = ({ children }) => {
@@ -24,8 +24,8 @@ const Layout = ({ children }) => {
         <link rel="icon" type="image/svg" href="/img/nfl.svg" />
         <title>Next Player Up</title>
       </Head>
-      <div>
-        <Navbar />
+      <div className="container">
+        <Header />
         {children}
         <Footer />
       </div>
