@@ -64,8 +64,31 @@ body {
   display: flex; }
 
 .teams-container {
-  flex: 1;
-  color: var(--color-white); }
+  color: var(--color-white);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.team-box-title {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.team-box-view {
+  flex: 0 24%;
+  height: 200px;
+  margin-bottom: 2%;
+  border-radius: 1rem; }
+
+.team-box-link {
+  flex: 0;
+  color: var(--color-white);
+  text-decoration: none;
+  align-items: center; }
+
+.team-image {
+  height: 108px;
+  width: 108px; }
 
 .navbar {
   background-color: var(--color-grey);

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 function Teams({ teams }) {
   return (
-    <div className="teams-container">
-      <ul>
+    <div>
+      <ul className="teams-container">
         {teams &&
           teams.map((team) => (
             <div
@@ -14,8 +14,6 @@ function Teams({ teams }) {
               style={{ 'background-color': `#${team.PrimaryColor}` }}
             >
               <li className="team-box-title">
-                <h1>{team.City}</h1>
-                <h2>{team.Name}</h2>
                 <Link href={`/teams/${team.Key}`} passHref>
                   <a className="team-box-link">
                     <Image
@@ -23,7 +21,10 @@ function Teams({ teams }) {
                       alt="Team Logo"
                       height={108}
                       width={108}
+                      className="team-image"
                     ></Image>
+                    <h1>{team.City}</h1>
+                    <h2>{team.Name}</h2>
                   </a>
                 </Link>
               </li>
