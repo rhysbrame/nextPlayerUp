@@ -46,8 +46,8 @@ export async function getStaticProps({ params }) {
 }
 
 Team.propTypes = {
-  params: PropTypes.node.isRequired,
-  teamRoster: PropTypes.node.isRequired,
+  params: PropTypes.object.isRequired,
+  teamRoster: PropTypes.array.isRequired,
 };
 
 export default Team;

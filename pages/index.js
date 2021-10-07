@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { AppContext } from '../contexts/AppContext';
 import { getAllTeamsData } from '../library/teams';
 import Teams from '../components/Teams';
-import Navbar from '../components/Navbar';
 
 function Home({ teamsData }) {
   const { teams, setTeams } = useContext(AppContext);
@@ -12,17 +11,11 @@ function Home({ teamsData }) {
     setTeams(teamsData);
   });
 
-  if (!teams || !teamsData) return <p></p>;
-  return (
-    <div className="content">
-      <Navbar />
-      <Teams teams={teams} />
-    </div>
-  );
+  return !teams || !teamsData ? <p></p> : <Teams teams={teams} />;
 }
 
 Home.propTypes = {
-  teamsData: PropTypes.node.isRequired,
+  teamsData: PropTypes.array.isRequired,
 };
 
 export async function getStaticProps() {
