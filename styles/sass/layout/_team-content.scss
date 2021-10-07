@@ -1,29 +1,44 @@
-.teams-container {
-  color: var(--color-white);
+.teams-view {
+  flex: 1;
+}
+
+.teams-grid {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.team-box-title {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  list-style-type: none;
 }
 
-.team-box-view {
-  flex: 0 24%;
+.team-tile {
   height: 200px;
-  margin-bottom: 2%;
+  width: 200px;
   border-radius: 1rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.team-box-link {
-  flex: 0;
+
+.team-tile--link {
   color: var(--color-white);
   text-decoration: none;
-  align-items: center;
 }
-.team-image {
-  height: 108px;
-  width: 108px;
+
+.team-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.75rem;
+}
+
+.team-title--city {
+  font-weight: 100;
+}
+
+.team-title--name {
+  font-weight: 900;
 }

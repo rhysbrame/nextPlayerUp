@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import Footer from './Footer';
 import Header from './Header';
+import Navbar from './Navbar';
 import Head from 'next/head';
 
 const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link
           rel="preload"
@@ -21,11 +22,12 @@ const Layout = ({ children }) => {
           as="font"
           crossOrigin=""
         />
-        <link rel="icon" type="image/svg" href="/img/nfl.svg" />
+        <link rel="icon" type="image/png" href="/img/nmu-logo.png" />
         <title>Next Player Up</title>
       </Head>
       <div className="container">
         <Header />
+        <Navbar />
         {children}
         <Footer />
       </div>
