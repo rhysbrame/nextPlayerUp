@@ -25,6 +25,11 @@
   text-decoration: none;
 }
 
+.team-tile--img {
+  display: flex;
+  flex-direction: column;
+}
+
 .team-title {
   display: flex;
   flex-direction: column;

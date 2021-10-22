@@ -3,6 +3,7 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { AppContext } from '../../contexts/AppContext';
 import { getTeamPaths, getTeamRoster } from '../../library/teams';
+import PlayerTile from '../../components/PlayerTile';
 
 function Team({ teamRoster, params }) {
   const { teams } = useContext(AppContext);
@@ -11,14 +12,22 @@ function Team({ teamRoster, params }) {
   });
   if (!teamRoster || !team) return <p></p>;
   return (
-    <div>
-      <h1>Team {team.FullName}</h1>
-      <Image src={team.WikipediaLogoUrl} alt="Team Logo" height={108} width={108}></Image>
-      <ul>
+    <div className="players-container" style={{ backgroundColor: `#${team.PrimaryColor}e6` }}>
+      <section className="players-team-view">
+        <span className="players-team-view--img">
+          <Image src={team.WikipediaLogoUrl} height={108} width={108} alt="Team Logo"></Image>
+        </span>
+        <h1 className="players-team-view--heading">{team.FullName}</h1>
+      </section>
+      <ul className="players-grid">
         {teamRoster.map((player) => (
-          <div key={player.PlayerID}>
-            <li>Full Name: {player.Name}</li>
-          </div>
+          <li
+            key={player.PlayerID}
+            className="players-grid--item"
+            style={{ borderColor: `#${team.SecondaryColor}` }}
+          >
+            <PlayerTile player={player} />
+          </li>
         ))}
       </ul>
     </div>

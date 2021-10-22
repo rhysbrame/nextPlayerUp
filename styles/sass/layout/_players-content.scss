@@ -1,0 +1,95 @@
+.players-container {
+  flex: 1;
+}
+
+.players-team-view {
+  height: 12rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.players-team-view--heading {
+  align-self: center;
+  margin-left: 3rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+}
+
+.players-team-view--img {
+  justify-content: center;
+  align-self: center;
+}
+
+.players-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+// This is the li
+.players-grid--item {
+  list-style-type: none;
+  height: 17rem;
+  width: 17rem;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-radius: 1rem;
+  background-color: var(--color-grey-light);
+  margin-bottom: 2rem;
+}
+
+// This is in the PlayerTile component
+.player-tile {
+  display: flex;
+  justify-content: center;
+}
+
+.player-tile--link {
+  color: var(--color-black);
+  text-decoration: none;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.player-tile--img {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin: 1rem;
+  position: relative;
+
+  & > div {
+    align-self: center;
+  }
+}
+
+.player-title {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  text-align: center;
+  align-self: stretch;
+  justify-items: center;
+  margin-bottom: 0.5rem;
+  color: var(--color-black);
+}
+.player-title--number {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  height: 3rem;
+  width: 3rem;
+  font-size: 1.4rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+}
