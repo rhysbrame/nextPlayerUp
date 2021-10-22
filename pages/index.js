@@ -2,7 +2,7 @@ import { useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { AppContext } from '../contexts/AppContext';
 import { getAllTeamsData } from '../library/teams';
-import Teams from '../components/Teams';
+import TeamTile from '../components/TeamTile';
 
 function Home({ teamsData }) {
   const { teams, setTeams } = useContext(AppContext);
@@ -11,7 +11,19 @@ function Home({ teamsData }) {
     setTeams(teamsData);
   });
 
-  return !teams || !teamsData ? <p></p> : <Teams teams={teams} />;
+  return !teams || !teamsData ? (
+    <p></p>
+  ) : (
+    <section className="teams-view">
+      <ul className="teams-grid">
+        {teams.map((team) => (
+          <li key={team.TeamID} className="teams-grid--item">
+            <TeamTile team={team} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 }
 
 Home.propTypes = {
