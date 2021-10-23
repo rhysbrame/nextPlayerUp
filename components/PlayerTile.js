@@ -11,7 +11,7 @@ function PlayerTile({ player }) {
             <Image src={`${player.PhotoUrl}`} alt="Player Headshot" height={90} width={65}></Image>
             <h3 className="player-title--number"> #{player.Number} </h3>
             <h1 className="player-title">
-              <span className="player-tilte--firstname"> {player.FirstName} </span>
+              <span className="player-title--firstname"> {player.FirstName} </span>
               <span className="player-title--lastname"> {player.LastName} </span>
             </h1>
           </span>

@@ -3,12 +3,24 @@
 }
 
 .players-team-view {
-  height: 12rem;
-  display: flex;
-  justify-content: center;
+  background-color: var(--color-white);
+  // background-color: palegreen;
+  height: 17rem;
   margin: 2rem;
+  position: relative;
+  border-radius: 1rem;
+  border: 0.6rem solid;
 }
 
+.players-team-view--wordmark {
+  & > div {
+    // background-color: inherit;
+    border: 2rem solid var(--color-white);
+    border-radius: 10rem;
+  }
+}
+
+//remove these
 .players-team-view--heading {
   align-self: center;
   margin-left: 3rem;
@@ -18,11 +30,11 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 3rem;
 }
-
 .players-team-view--img {
   justify-content: center;
   align-self: center;
 }
+//remove these
 
 .players-grid {
   display: flex;
@@ -36,7 +48,7 @@
   list-style-type: none;
   height: 17rem;
   width: 17rem;
-  border-width: 0.2rem;
+  border-width: 0.3rem;
   border-style: solid;
   border-radius: 1rem;
   background-color: var(--color-grey-light);
@@ -78,6 +90,21 @@
   justify-items: center;
   margin-bottom: 0.5rem;
   color: var(--color-black);
+}
+.player-title--firstname::before {
+  content: '';
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+
+  // background-image: url('/img/chevron-thin-right.svg');
+  // background-size: cover;
+
+  background-color: var(--color-black);
+  mask-image: url('/img/chevron-thin-right.svg');
+  -webkit-mask-image: url('/img/chevron-thin-right.svg');
+  mask-size: cover;
+  -webkit-mask-size: cover;
 }
 .player-title--number {
   background-color: var(--color-black);

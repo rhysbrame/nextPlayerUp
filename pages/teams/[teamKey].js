@@ -12,19 +12,20 @@ function Team({ teamRoster, params }) {
   });
   if (!teamRoster || !team) return <p></p>;
   return (
-    <div className="players-container" style={{ backgroundColor: `#${team.PrimaryColor}e6` }}>
-      <section className="players-team-view">
-        <span className="players-team-view--img">
-          <Image src={team.WikipediaLogoUrl} height={108} width={108} alt="Team Logo"></Image>
+    <div className="players-container" style={{ backgroundColor: `#${team.PrimaryColor}` }}>
+      <section className="players-team-view" style={{ borderColor: `#${team.SecondaryColor}` }}>
+        <span className="players-team-view--wordmark">
+          <Image src={team.WikipediaWordMarkUrl} alt="Team Wordmark" layout="fill"></Image>
         </span>
-        <h1 className="players-team-view--heading">{team.FullName}</h1>
       </section>
       <ul className="players-grid">
         {teamRoster.map((player) => (
           <li
             key={player.PlayerID}
             className="players-grid--item"
-            style={{ borderColor: `#${team.SecondaryColor}` }}
+            style={{
+              borderColor: `#${team.SecondaryColor}`,
+            }}
           >
             <PlayerTile player={player} />
           </li>

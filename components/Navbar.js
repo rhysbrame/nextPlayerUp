@@ -15,7 +15,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="nav-bar__item">
-          <Link href="/teams/">
+          <Link href="/teams">
             <a className="nav-bar__link">
               <svg className="nav-bar__icon">
                 <use xlinkHref="/icons/sprite.svg#icon-key"></use>
@@ -25,7 +25,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="nav-bar__item">
-          <Link href="/player/">
+          <Link href="/players">
             <a className="nav-bar__link">
               <svg className="nav-bar__icon">
                 <use xlinkHref="/icons/sprite.svg#icon-message"></use>
@@ -35,7 +35,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="nav-bar__item">
-          <Link href="/news/">
+          <Link href="/news">
             <a className="nav-bar__link">
               <svg className="nav-bar__icon">
                 <use xlinkHref="/icons/sprite.svg#icon-globe"></use>
