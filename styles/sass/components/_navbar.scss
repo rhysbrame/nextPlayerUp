@@ -1,16 +1,30 @@
 .nav-bar {
-  ul {
-    list-style: none;
-  }
   font-size: 1.4rem;
   flex: 0 0 18%;
   background-color: var(--color-grey-dark);
+
+  ul {
+    list-style: none;
+
+    @media only screen and (max-width: $bp-medium) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
 
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media only screen and (max-width: $bp-medium) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      flex: 1;
     }
   }
 
@@ -48,6 +62,16 @@
 
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1rem;
+    }
   }
 
   &__icon {
@@ -55,5 +79,12 @@
     height: 2rem;
     margin-right: 2rem;
     fill: currentColor;
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }

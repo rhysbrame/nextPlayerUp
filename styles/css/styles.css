@@ -27,6 +27,9 @@
 
 html {
   font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   box-sizing: border-box;
@@ -63,6 +66,14 @@ body {
   margin: 8rem auto;
   background-color: var(--color-grey-light);
   box-shadow: var(--shadow-dark); }
+  @media only screen and (max-width: 75em) {
+    .container {
+      margin: 0;
+      max-width: 100%;
+      width: 100%; } }
+  @media only screen and (max-width: 53.95em) {
+    .container {
+      flex-direction: column; } }
 
 .teams-view {
   flex: 1; }
@@ -212,10 +223,20 @@ body {
   background-color: var(--color-grey-dark); }
   .nav-bar ul {
     list-style: none; }
+    @media only screen and (max-width: 53.95em) {
+      .nav-bar ul {
+        display: flex;
+        flex-direction: row; } }
   .nav-bar__item {
     position: relative; }
     .nav-bar__item:not(:last-child) {
       margin-bottom: 0.5rem; }
+      @media only screen and (max-width: 53.95em) {
+        .nav-bar__item:not(:last-child) {
+          margin-bottom: 0; } }
+    @media only screen and (max-width: 53.95em) {
+      .nav-bar__item {
+        flex: 1; } }
   .nav-bar__item::before {
     content: '';
     position: absolute;
@@ -241,11 +262,25 @@ body {
     z-index: 10;
     display: flex;
     align-items: center; }
+    @media only screen and (max-width: 53.95em) {
+      .nav-bar__link:link, .nav-bar__link:visited {
+        justify-content: center;
+        padding: 2rem; } }
+    @media only screen and (max-width: 37.5em) {
+      .nav-bar__link:link, .nav-bar__link:visited {
+        flex-direction: column;
+        padding: 1rem; } }
   .nav-bar__icon {
     width: 2rem;
     height: 2rem;
     margin-right: 2rem;
     fill: currentColor; }
+    @media only screen and (max-width: 37.5em) {
+      .nav-bar__icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem; } }
 
 .header {
   font-size: 1.4rem;
@@ -256,6 +291,10 @@ body {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--color-grey-light-2); }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      flex-wrap: wrap;
+      height: 12rem; } }
 
 .logo {
   margin-left: 2rem;
@@ -270,12 +309,20 @@ body {
     padding-left: 1rem;
     font-size: 2rem;
     color: var(--color-black); }
+    @media only screen and (max-width: 23.45em) {
+      .logo__text {
+        display: none; } }
 
 .search {
   flex: 0 0 40%;
   display: flex;
   align-items: center;
   justify-content: center; }
+  @media only screen and (max-width: 37.5em) {
+    .search {
+      order: 1;
+      flex: 0 0 100%;
+      background-color: var(--color-grey-light-2); } }
   .search__input {
     font-family: inherit;
     font-size: inherit;
@@ -339,6 +386,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
+  .user-nav__user {
+    margin-right: -1px; }
   .user-nav__user-photo {
     height: 3.75rem;
     border-radius: 50%;
